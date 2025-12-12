@@ -416,6 +416,23 @@ console.log(searchByTitle("lord"));
   Scrivi una funzione chiamata "searchAndDivide" che riceve una stringa come parametro e ritorna un oggetto contenente due array: "match" e "unmatch".
   "match" deve includere tutti i film dell'array "movies" fornito che contengono la stringa fornita all'interno del proprio titolo, mentre "unmatch" deve includere tutti i rimanenti.
 */
+function searchAndDivide(string) {
+  let result = {
+    match: [],
+    unmatch: [],
+  };
+  movies.forEach((movie) => {
+    if (movie.Title.toLowerCase().includes(string.toLowerCase())) {
+      result.match.push(movie);
+    } else {
+      result.unmatch.push(movie);
+    }
+  });
+
+  return result;
+}
+
+console.log(searchAndDivide("avengers"));
 
 /* ESERCIZIO 19
   Scrivi una funzione chiamata "removeIndex" che riceve un numero come parametro e ritorna l'array "movies" fornito privo dell'elemento nella posizione ricevuta come parametro.
