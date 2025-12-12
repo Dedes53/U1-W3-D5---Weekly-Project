@@ -525,8 +525,8 @@ deleteLi();
   Scrivi una funzione per aggiungere ad ogni tag <tr> la classe CSS "test"
 */
 function addClass() {
-  const tr = document.quesryselectorAll("tr");
-  tr.foreach((tr) => tr.addclass("test"));
+  const tr = document.querySelectorAll("tr");
+  tr.forEach((tr) => tr.classList.add("test"));
 }
 
 addClass();
