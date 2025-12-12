@@ -455,6 +455,11 @@ console.log(removeIndex(movies, 2));
 /* ESERCIZIO 20
   Scrivi una funzione per selezionare l'elemento dotato di id "container" all'interno della pagina.
 */
+const selectContainer = () => {
+  return document.getElementById("container");
+};
+
+console.log(selectContainer());
 
 /* ESERCIZIO 21
   Scrivi una funzione per selezionare ogni tag <td> all'interno della pagina.
