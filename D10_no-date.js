@@ -70,7 +70,9 @@ console.log(removeLastSkill(me));
 /* ESERCIZIO 1
   Crea una funzione chiamata "dice": deve generare un numero casuale tra 1 e 6.
 */
-
+function dice() {
+  return Math.floor(Math.random() * 6) + 1; // devo aggiungere +1 per escludere lo 0
+}
 /* ESERCIZIO 2
   Crea una funzione chiamata "whoIsBigger" che riceve due numeri come parametri e ritorna il maggiore dei due.
 */
