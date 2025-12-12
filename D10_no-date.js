@@ -44,8 +44,8 @@ console.log(removeAge(me));
 /* ESERCIZIO E
   Crea del codice per aggiungere programmaticamente all'oggetto precedentemente creato un array chiamato "skills", contenente i linguaggi di programmazione che conosci.
 */
-const addSkills = (obj, skillsArray) => {
-  obj.skills = skillsArray;
+const addSkills = (obj, skillsArr) => {
+  obj.skills = skillsArr;
   return obj;
 };
 console.log(addSkills(me, ["C#", "HTML", "CSS"]));
@@ -53,6 +53,8 @@ console.log(addSkills(me, ["C#", "HTML", "CSS"]));
 /* ESERCIZIO F
   Crea un pezzo di codice per aggiungere un nuovo elemento all'array "skills" contenuto nell'oggetto "me".
 */
+me.skills.push("JavaScript");
+console.log(me);
 
 /* ESERCIZIO G
   Crea un pezzo di codice per rimuovere programmaticamente l'ultimo elemento dall'array "skills" contenuto nell'oggetto "me".
