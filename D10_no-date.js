@@ -94,21 +94,52 @@ console.log(whoIsBigger(10, 5));
 
   Es.: splitMe("I love coding") => ritorna ["I", "Love", "Coding"]
 */
+function splitMe(str) {
+  return str.split(" ");
+}
+console.log(splitMe("Corso Web Developer"));
 
 /* ESERCIZIO 4
   Crea una funzione chiamata "deleteOne" che riceve una stringa e un booleano come parametri.
   Se il valore booleano è true la funzione deve ritornare la stringa senza il primo carattere, altrimenti la deve ritornare senza l'ultimo.
 */
+function deleteOne(string, bool) {
+  if (bool) {
+    return string.slice(1);
+  } else {
+    return string.slice(0, -1);
+  }
+}
+console.log(deleteOne("Federico", true));
+console.log(deleteOne("Federico", false));
 
 /* ESERCIZIO 5
   Crea una funzione chiamata "onlyLetters" che riceve una stringa come parametro e la ritorna eliminando tutte le cifre numeriche.
 
   Es.: onlyLetters("I have 4 dogs") => ritorna "I have dogs"
 */
+function onlyLetters(string) {
+  let newStr = "";
+
+  for (let i = 0; i < string.length; i++) {
+    let letter = string[i];
+    if (letter < "0" || letter > "9") {
+      newStr += letter;
+    }
+  }
+
+  return newStr;
+}
+
+console.log(onlyLetters("I have 4 dogs and 2 cats"));
 
 /* ESERCIZIO 6
   Crea una funzione chiamata "isThisAnEmail" che riceve una stringa come parametro e ritorna true se la stringa è un valido indirizzo email.
 */
+function isThisAnEmail(email) {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+}
 
 /* ESERCIZIO 8
   Scrivi una funzione chiamata "rollDice" che riceve un numero come parametro.
