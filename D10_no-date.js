@@ -6,6 +6,8 @@ REGOLE
 - Puoi testare il tuo codice in un file separato, o de-commentando un esercizio alla volta
 - Per farlo puoi utilizzare il terminale Bash, quello di VSCode o quello del tuo sistema operativo (se utilizzi macOS o Linux)
 */
+
+/* Questo array viene usato per gli esercizi. Non modificarlo. */
 const movies = [
   {
     Title: "The Lord of the Rings: The Fellowship of the Ring",
@@ -560,5 +562,3 @@ addClass();
 /* ESERCIZIO 29
   Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e ritorna true se il numero fornito è un numero primo.
 */
-
-/* Questo array viene usato per gli esercizi. Non modificarlo. */
