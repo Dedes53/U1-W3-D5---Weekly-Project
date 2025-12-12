@@ -524,6 +524,12 @@ deleteLi();
 /* ESERCIZIO 26
   Scrivi una funzione per aggiungere ad ogni tag <tr> la classe CSS "test"
 */
+function addClass() {
+  const tr = document.quesryselectorAll("tr");
+  tr.foreach((tr) => tr.addclass("test"));
+}
+
+addClass();
 
 // [EXTRA] JS Avanzato
 
