@@ -12,11 +12,14 @@ REGOLE
 /* ESERCIZIO A
   Crea una variabile chiamata "sum" e assegnaci il risultato della somma tra i valori 10 e 20.
 */
-let sum = 10 + 20;
+const sum = 10 + 20;
+
 /* ESERCIZIO B
   Crea una variabile chiamata "random" e assegnaci un numero casuale tra 0 e 20 (deve essere generato dinamicamente a ogni esecuzione).
 */
 let random = Math.floor(Math.random() * 21);
+console.log(random);
+
 /* ESERCIZIO C
   Crea una variabile chiamata "me" e assegnaci un oggetto contenente le seguenti proprietà: name = il tuo nome, surname = il tuo cognome, age = la tua età.
 */
@@ -25,17 +28,27 @@ let me = {
   surname: "Lepore",
   age: 28,
 };
+console.log(me);
+
 /* ESERCIZIO D
   Crea del codice per rimuovere programmaticamente la proprietà "age" dall'oggetto precedentemente creato.
 */
 function removeAge(obj) {
   delete obj.age;
+
+  return obj;
 }
 
 console.log(removeAge(me));
+
 /* ESERCIZIO E
   Crea del codice per aggiungere programmaticamente all'oggetto precedentemente creato un array chiamato "skills", contenente i linguaggi di programmazione che conosci.
 */
+const addSkills = (obj, skillsArray) => {
+  obj.skills = skillsArray;
+  return obj;
+};
+console.log(addSkills(me, ["C#", "HTML", "CSS"]));
 
 /* ESERCIZIO F
   Crea un pezzo di codice per aggiungere un nuovo elemento all'array "skills" contenuto nell'oggetto "me".
