@@ -595,8 +595,24 @@ function tree(height) {
 
   console.log(tree);
 }
+
 tree(5);
 
 /* ESERCIZIO 29
   Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e ritorna true se il numero fornito è un numero primo.
 */
+function isItPrime(num) {
+  //dividere il numero per ognin numero più piccolo si se stesso
+  for (let i = 2; i < num; i++) {
+    if (num % i === 0) {
+      return false; // se è divisibile per un numero diverso da 1 e da se stesso non è primo
+    }
+  }
+
+  return true; // se non è divisibile per nessun numero diverso da 1 e da se stesso è primo
+}
+
+console.log(isItPrime(11)); // true
+console.log(isItPrime(15)); // false
+console.log(isItPrime(2)); // true
+console.log(isItPrime(-2)); // true
