@@ -59,6 +59,11 @@ console.log(me);
 /* ESERCIZIO G
   Crea un pezzo di codice per rimuovere programmaticamente l'ultimo elemento dall'array "skills" contenuto nell'oggetto "me".
 */
+const removeLastSkill = (obj) => {
+  obj.skills.pop();
+  return obj;
+};
+console.log(removeLastSkill(me));
 
 // Funzioni
 
