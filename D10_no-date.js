@@ -119,6 +119,7 @@ const sum = 10 + 20;
   Crea una variabile chiamata "random" e assegnaci un numero casuale tra 0 e 20 (deve essere generato dinamicamente a ogni esecuzione).
 */
 let random = Math.floor(Math.random() * 21);
+
 console.log(random);
 
 /* ESERCIZIO C
@@ -129,6 +130,7 @@ let me = {
   surname: "Lepore",
   age: 28,
 };
+
 console.log(me);
 
 /* ESERCIZIO D
@@ -149,12 +151,14 @@ const addSkills = (obj, skillsArr) => {
   obj.skills = skillsArr;
   return obj;
 };
+
 console.log(addSkills(me, ["C#", "HTML", "CSS"]));
 
 /* ESERCIZIO F
   Crea un pezzo di codice per aggiungere un nuovo elemento all'array "skills" contenuto nell'oggetto "me".
 */
 me.skills.push("JavaScript");
+
 console.log(me);
 
 /* ESERCIZIO G
@@ -164,6 +168,7 @@ const removeLastSkill = (obj) => {
   obj.skills.pop();
   return obj;
 };
+
 console.log(removeLastSkill(me));
 
 // Funzioni
@@ -174,6 +179,7 @@ console.log(removeLastSkill(me));
 function dice() {
   return Math.floor(Math.random() * 6) + 1; // devo aggiungere +1 per escludere lo 0
 }
+
 console.log(dice());
 
 /* ESERCIZIO 2
@@ -188,6 +194,7 @@ function whoIsBigger(num1, num2) {
 
   // return num1 > num2 ? num1 : num2;    versione abbreviata
 }
+
 console.log(whoIsBigger(10, 5));
 
 /* ESERCIZIO 3
@@ -198,6 +205,7 @@ console.log(whoIsBigger(10, 5));
 function splitMe(str) {
   return str.split(" ");
 }
+
 console.log(splitMe("Corso Web Developer"));
 
 /* ESERCIZIO 4
@@ -211,6 +219,7 @@ function deleteOne(string, bool) {
     return string.slice(0, -1);
   }
 }
+
 console.log(deleteOne("Federico", true));
 console.log(deleteOne("Federico", false));
 
@@ -290,15 +299,18 @@ function rollDice(numRolls) {
   let rolls = {};
   let sum = 0;
   let values = [];
+
   for (let i = 0; i < numRolls; i++) {
     let roll = dice();
     sum += roll;
     values.push(roll);
   }
+
   rolls.sum = sum;
   rolls.values = values;
   return rolls;
 }
+
 console.log(rollDice(5));
 
 // Arrays & Oggetti
@@ -312,6 +324,7 @@ function deleteProp(obj, prop) {
   delete obj[prop];
   return obj;
 }
+
 console.log(deleteProp(me, "name"));
 
 /* ESERCIZIO 12
@@ -337,6 +350,7 @@ console.log(newestMovie(movies));
 function countMovies(array) {
   return array.length;
 }
+
 console.log(countMovies(movies));
 
 /* ESERCIZIO 14
@@ -344,6 +358,7 @@ console.log(countMovies(movies));
 */
 function onlyTheYears(array) {
   let years = [];
+
   array.forEach((movie) => {
     years.push(movie.Year);
   });
@@ -357,6 +372,7 @@ console.log(onlyTheYears(movies));
 */
 function onlyInLastMillennium(array) {
   let oldMovies = [];
+
   array.forEach((movie) => {
     if (parseInt(movie.Year) < 2000) {
       oldMovies.push(movie);
@@ -371,6 +387,7 @@ console.log(onlyInLastMillennium(movies));
 */
 function sumAllTheYears(array) {
   let sum = 0;
+
   array.forEach((movie) => {
     sum += parseInt(movie.Year);
   });
@@ -382,6 +399,18 @@ console.log(sumAllTheYears(movies));
 /* ESERCIZIO 17
   Scrivi una funzione chiamata "searchByTitle" che riceve una stringa come parametro e ritorna i film nell'array "movies" fornito che la contengono nel titolo.
 */
+function searchByTitle(string) {
+  let foundMovies = [];
+
+  movies.forEach((movie) => {
+    if (movie.Title.toLowerCase().includes(string.toLowerCase())) {
+      foundMovies.push(movie);
+    }
+  });
+  return foundMovies;
+}
+
+console.log(searchByTitle("lord"));
 
 /* ESERCIZIO 18
   Scrivi una funzione chiamata "searchAndDivide" che riceve una stringa come parametro e ritorna un oggetto contenente due array: "match" e "unmatch".
