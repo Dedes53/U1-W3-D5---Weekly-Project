@@ -185,15 +185,33 @@ console.log(isThisAnEmail("leporfede@.com")); // true
       values: [3, 3, 4]
   }
 */
+function rollDice(numRolls) {
+  let rolls = {};
+  let sum = 0;
+  let values = [];
+  for (let i = 0; i < numRolls; i++) {
+    let roll = dice();
+    sum += roll;
+    values.push(roll);
+  }
+  rolls.sum = sum;
+  rolls.values = values;
+  return rolls;
+}
+console.log(rollDice(5));
 
 // Arrays & Oggetti
 
 // NOTA: l'array "movies" usato in alcuni esercizi è definito alla fine di questo file
 
 /* ESERCIZIO 11
-  Scrivi una funzione chiamata "deleteProp" che riceve un oggetto e una stringa come parametri; deve ritornare l'oggetto fornito dopo aver eliminato
-  in esso la proprietà chiamata come la stringa passata come secondo parametro.
+  Scrivi una funzione chiamata "deleteProp" che riceve un oggetto e una stringa come parametri; deve ritornare l'oggetto fornito dopo aver eliminato in esso la proprietà chiamata come la stringa passata come secondo parametro.
 */
+function deleteProp(obj, prop) {
+  delete obj[prop];
+  return obj;
+}
+console.log(deleteProp(me, "name"));
 
 /* ESERCIZIO 12
   Scrivi una funzione chiamata "newestMovie" che trova il film più recente nell'array "movies" fornito.
