@@ -73,9 +73,21 @@ console.log(removeLastSkill(me));
 function dice() {
   return Math.floor(Math.random() * 6) + 1; // devo aggiungere +1 per escludere lo 0
 }
+console.log(dice());
+
 /* ESERCIZIO 2
   Crea una funzione chiamata "whoIsBigger" che riceve due numeri come parametri e ritorna il maggiore dei due.
 */
+function whoIsBigger(num1, num2) {
+  if (num1 > num2) {
+    return num1;
+  } else {
+    return num2;
+  }
+
+  // return num1 > num2 ? num1 : num2;    versione abbreviata
+}
+console.log(whoIsBigger(10, 5));
 
 /* ESERCIZIO 3
   Crea una funzione chiamata "splitMe" che riceve una stringa come parametro e ritorna un'array contenente ogni parola della stringa.
