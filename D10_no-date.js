@@ -137,9 +137,41 @@ console.log(onlyLetters("I have 4 dogs and 2 cats"));
   Crea una funzione chiamata "isThisAnEmail" che riceve una stringa come parametro e ritorna true se la stringa è un valido indirizzo email.
 */
 function isThisAnEmail(email) {
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return emailRegex.test(email);
+  // ricerca della @
+  if (!email.includes("@")) return false;
+
+  const parts = email.split("@");
+
+  // controllo che ci sia solo una @
+  if (parts.length !== 2) return false;
+
+  const nome = parts[0]; // prima della @
+  const domain = parts[1]; // dopo la @
+
+  // verifico che nome e dominio siano "validi"
+  if (nome.length === 0 || domain.length === 0) return false;
+
+  // controllo cxhe il dominio contenga un punto (.it, .com ecc)
+  if (!domain.includes(".")) return false;
+
+  // verifico che ci sia la parte dopo il punto
+  if (domain.endsWith(".")) return false;
+
+  return true;
 }
+
+console.log(isThisAnEmail("leporfede@gmail.com")); //true
+console.log(isThisAnEmail("lepor.fede@gmail.com")); // true
+console.log(isThisAnEmail("leporfedegmail.com")); // false
+console.log(isThisAnEmail("leporfede@gmailcom")); // false
+console.log(isThisAnEmail("leporfede@gmail.")); // false
+console.log(isThisAnEmail("leporfede@@gmail.com")); // false
+console.log(isThisAnEmail("@gmail.com")); // false
+console.log(isThisAnEmail("leporfede@")); // false
+// da impolkementare se riesco/ho tempo controlli migliori per i casi in cui non verifica correttamente
+console.log(isThisAnEmail("leporfede@gmail.c")); // true
+console.log(isThisAnEmail("leporfede@gmail..com")); // true
+console.log(isThisAnEmail("leporfede@.com")); // true
 
 /* ESERCIZIO 8
   Scrivi una funzione chiamata "rollDice" che riceve un numero come parametro.
