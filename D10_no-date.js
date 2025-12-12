@@ -496,10 +496,30 @@ redLinks();
 /* ESERCIZIO 24
   Scrivi una funzione per aggiungere un nuovo elemento alla lista non ordinata con id "myList".
 */
+function addLi(num) {
+  for (let i = 0; i < num; i++) {
+    const ul = document.getElementById("myList");
+    const newLi = document.createElement("li");
+
+    newLi.innerText = "Ciao siamo quelli nuovi!!";
+    ul.appendChild(newLi);
+  }
+}
+
+addLi(3);
 
 /* ESERCIZIO 25
   Scrivi una funzione per svuotare la lista non ordinata con id "myList".
 */
+function deleteLi() {
+  const ul = document.getElementById("myList");
+  const li = document.querySelectorAll("#myList li");
+
+  li.forEach((li) => (li.innerText = "")); //svuola soltanto il testo contenuto negli li
+  // ul.innerHTML = ""; elimina qualsiasi copntenuto del tag ul
+}
+
+deleteLi();
 
 /* ESERCIZIO 26
   Scrivi una funzione per aggiungere ad ogni tag <tr> la classe CSS "test"
