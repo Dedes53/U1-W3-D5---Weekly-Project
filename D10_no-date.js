@@ -421,6 +421,7 @@ function searchAndDivide(string) {
     match: [],
     unmatch: [],
   };
+
   movies.forEach((movie) => {
     if (movie.Title.toLowerCase().includes(string.toLowerCase())) {
       result.match.push(movie);
@@ -437,6 +438,17 @@ console.log(searchAndDivide("avengers"));
 /* ESERCIZIO 19
   Scrivi una funzione chiamata "removeIndex" che riceve un numero come parametro e ritorna l'array "movies" fornito privo dell'elemento nella posizione ricevuta come parametro.
 */
+function removeIndex(array, index) {
+  for (let i = 0; i < array.length; i++) {
+    if (i === index) {
+      array.splice(i, 1);
+    }
+  }
+
+  return array;
+}
+
+console.log(removeIndex(movies, 2));
 
 // DOM (nota: gli elementi che selezionerai non si trovano realmente nella pagina)
 
